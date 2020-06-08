@@ -1,8 +1,17 @@
 def intersection(arrays):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    dict = {}
+    result = []
+
+    for a in arrays:
+        for b in a:
+            if dict.get(b):
+                dict[b] += 1
+            else:
+                dict[b] = 1
+            
+        for key, value in dict.items():
+            if value > len(arrays) - 1:
+                result.append(key)
 
     return result
 
